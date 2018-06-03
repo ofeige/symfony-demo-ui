@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    <script src="{{ asset('build/app.js') }}"></script>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+{% include 'nav.html.twig' %}
+
+<main role="main">
+    {% block body %}
+    {% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted"><a href="{{ path('terms') }}">Terms</a></span>
+    </div>
+</footer>
+{% block javascripts %}
+{% endblock %}
+</body>
+</html>

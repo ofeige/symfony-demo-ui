@@ -1,0 +1,61 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "~font-awesome/fonts";
+$os-font-path: "~npm-font-open-sans/fonts";
+
+/*$brand-primary: darken(#428bca, 0%);
+$bg-primary: darken(#428bca, 20%);
+*/
+
+/* $enable-rounded: false; */
+
+$enable-shadows: false;
+
+$theme-colors: (
+        "primary": #005ea8,
+        "dark": darken(#005ea8, 10%),
+        "light": lighten(#005ea8, 10%)
+);
+
+[role="main"] {
+  padding-top: 48px;
+}
+
+.navbar-brand {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+html {
+  position: relative !important;
+  min-height: 100% !important;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px !important;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+#profileDropdown {
+  border-radius: 0 !important;
+}
+
+/* more beautyfull labels */
+.form-control-label {
+  font-weight: 600;
+  font-size: 14px !important;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 0px;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';

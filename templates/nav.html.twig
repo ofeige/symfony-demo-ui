@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-primary p-0">
+    <a class="navbar-brand pl-3" href="{{ path('default') }}">Demo-42 <i class="fa fa-bullhorn"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item{{ (app.request.attributes.get('_route') == 'app') ? ' active' : ''}}">
+                <a class="nav-link" href="{{ path('app') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item{{ (app.request.attributes.get('_route') == 'link1') ? ' active' : ''}}">
+                <a class="nav-link" href="{{ path('link1') }}">Link1 visible for sign-in user only</a>
+            </li>
+            <li class="nav-item{{ (app.request.attributes.get('_route') == 'link2') ? ' active' : ''}}">
+                <a class="nav-link" href="{{ path('link2') }}">Link2 visible for sign-in user only</a>
+            </li>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item{{ (app.request.attributes.get('_route') == 'admin') ? ' active' : ''}}">
+                    <a href="{{ path('admin') }}" class="nav-link">Admin</a>
+                </li>
+            {% endif %}
+        </ul>
+        <div class="btn-group" role="group">
+            <button id="profileDropdown" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user"></i> Username
+            </button>
+            <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="{{ path('user_profile') }}">Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/logout">logout</a>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item{{ (app.request.attributes.get('_route') == 'default') ? ' active' : ''}}">
+                <a href="{{ path('default') }}" class="nav-link">Home</a>
+            </li>
+
+            <li class="nav-item{{ (app.request.attributes.get('_route') == 'login') ? ' active' : ''}}">
+                <a href="{{ path('app') }}" class="nav-link">Login
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <li class="nav-item{{ (app.request.attributes.get('_route') == 'user_registration') ? ' active' : ''}}">
+                <a href="{{ path('user_registration') }}" class="nav-link">Registration</a>
+            </li>
+        </ul>
+        {% endif %}
+    </div>
+</nav>

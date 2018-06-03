@@ -1,0 +1,37 @@
+easy_admin:
+    entities:
+        User:
+            class: App\Entity\User
+            list:
+                fields:
+                    - id
+                    - username
+                    - { property: 'email', type: 'email' }
+                    - { property: 'roles', type: 'array', sortable: false }
+                    - isActive
+            form:
+                fields:
+                    - { type: 'group', label: 'Basic information', icon: 'shield',
+                                                            help: 'infos about the user', css_class: 'warning' }
+                    - username
+                    - { property: 'email', type: 'email' }
+
+                    - isActive
+
+                    - { type: 'group', label: 'Roles', icon: 'shield',
+                                            help: 'Roles of the User', css_class: 'danger' }
+                    - { property: 'roles', type: 'choice', type_options: {choices: {'User':'ROLE_USER', 'Admin':'ROLE_ADMIN'}, multiple: true, expanded: true}}
+
+            new:
+                fields:
+                    - { property: 'plainPassword', type: 'password', type_options: {required: true}}
+
+            edit:
+                fields:
+                    - { property: 'plainPassword', type: 'password', type_options: {required: false}}
+
+    site_name: 'Demo-42'
+    design:
+        menu:
+            - { entity: 'User', icon: 'user' }
+            - { label: 'exit admin', route: 'app', icon: 'close' }
