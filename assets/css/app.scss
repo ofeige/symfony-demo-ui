@@ -1,61 +1,86 @@
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$fa-font-path: "~font-awesome/fonts";
-$os-font-path: "~npm-font-open-sans/fonts";
+/**
+  ITCSS Standard by Harry Roberts
+  https://csswizardry.net/talks/2014/11/itcss-dafed.pdf
 
-/*$brand-primary: darken(#428bca, 0%);
-$bg-primary: darken(#428bca, 20%);
+  !important import every single file instead of whole folders
+*/
+/**
+  Variables:
+  global variables, such as brand colors, configs etc
+*/
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+/**
+  overwrite bootstrap standard colors with Corporate Identity
+ */
+@import "./variables/variables";
+
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/grid";
+
+/**
+  Mixins
+*/
+//@import "./mixins/mixins";
+
+
+/**
+  HtmlTags:
+  ground zero styles, reset styles such as normalize.css
+*/
+//@import "./generic"
+@import "./htmltags/htmltags";
+
+
+//@import "~bootstrap/scss/images";
+//@import "~bootstrap/scss/code";
+
+//@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+//@import "~bootstrap/scss/card";
+//@import "~bootstrap/scss/breadcrumb";
+//@import "~bootstrap/scss/pagination";
+//@import "~bootstrap/scss/badge";
+//@import "~bootstrap/scss/jumbotron";
+//@import "~bootstrap/scss/alert";
+//@import "~bootstrap/scss/progress";
+//@import "~bootstrap/scss/media";
+//@import "~bootstrap/scss/list-group";
+//@import "~bootstrap/scss/close";
+//@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+//@import "~bootstrap/scss/carousel";
+//@import "~bootstrap/scss/utilities";
+//@import "~bootstrap/scss/print";
+
+
+/**
+add own scss here
+ */
+
+/**
+  Classes:
+  no cosmetic design patterns. Class only styles from here onwards.
+  Classes here are loosely named and I start doing OOCSS here (e.g. .button, .list-item, grid systems etc)
 */
 
-/* $enable-rounded: false; */
 
-$enable-shadows: false;
+/**
+  Trumps:
+  utilities, helpers and overrides. !important is often used.
+*/
 
-$theme-colors: (
-        "primary": #005ea8,
-        "dark": darken(#005ea8, 10%),
-        "light": lighten(#005ea8, 10%)
-);
-
-[role="main"] {
-  padding-top: 48px;
-}
-
-.navbar-brand {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-}
-
-html {
-  position: relative !important;
-  min-height: 100% !important;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px !important;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
-}
-
-#profileDropdown {
-  border-radius: 0 !important;
-}
-
-/* more beautyfull labels */
-.form-control-label {
-  font-weight: 600;
-  font-size: 14px !important;
-}
-
-input[type=text]:focus, textarea:focus {
-  box-shadow: 0 0 0px;
-}
-
-@import '~bootstrap/scss/bootstrap.scss';
+@import "./trumps/buttons";
