@@ -76,7 +76,8 @@ add own scss here
   no cosmetic design patterns. Class only styles from here onwards.
   Classes here are loosely named and I start doing OOCSS here (e.g. .button, .list-item, grid systems etc)
 */
-
+@import "./classes/forms";
+@import "./classes/navbar";
 
 /**
   Trumps:
