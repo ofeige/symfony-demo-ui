@@ -22,7 +22,7 @@ class UserProfile
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="userProfile")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $user;
 

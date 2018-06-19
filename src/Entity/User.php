@@ -50,7 +50,7 @@ class User implements UserInterface, \Serializable
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\UserProfile", mappedBy="user")
-     * @ORM\JoinColumn(name="user_profile_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_profile_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $userProfile;
 

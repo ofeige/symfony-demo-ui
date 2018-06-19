@@ -15,10 +15,27 @@ read the README.md from vagrant project in this folder (or here https://github.c
 after succesfull build of vagrant run:
 ``` 
 vagrant ssh
-cd /vagrant/ui
-composer install
 cd /vagrant/api
 composer install
+cd /vagrant/ui
+composer install
+yarn install
+yarn run encore production 
+``` 
+
+now we have to setup the database
+``` 
+bin/console doctrine:database:create
+bin/console doctrine:migrations:migrate -n
+bin/console doctrine:fixtures:load -n
 ``` 
 
 now you can call http://ui.demo.test 
+you can login as admin with 
+
+user: admin@example.com
+pass: test
+
+or as user with
+user: demo@example.com
+pass: test
