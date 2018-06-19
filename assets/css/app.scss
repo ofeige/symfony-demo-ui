@@ -14,7 +14,7 @@
 /**
   overwrite bootstrap standard colors with Corporate Identity
  */
-@import "./variables/variables";
+@import "variables/variables";
 
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
@@ -33,7 +33,7 @@
   ground zero styles, reset styles such as normalize.css
 */
 //@import "./generic"
-@import "./htmltags/htmltags";
+@import "htmltags/htmltags";
 
 
 //@import "~bootstrap/scss/images";
@@ -77,11 +77,11 @@ add own scss here
   Classes here are loosely named and I start doing OOCSS here (e.g. .button, .list-item, grid systems etc)
 */
 @import "./classes/forms";
-@import "./classes/navbar";
+@import "classes/navbar";
 
 /**
   Trumps:
   utilities, helpers and overrides. !important is often used.
 */
 
-@import "./trumps/buttons";
+@import "trumps/buttons";
