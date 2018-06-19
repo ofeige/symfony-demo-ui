@@ -6,6 +6,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: $footer-height !important;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
 }
 
 main {
@@ -20,6 +21,8 @@ textarea:focus {
 footer {
     position: absolute;
     bottom: 0;
+    width: 100%;
+
     /* Set the fixed height of the footer here */
     height: $footer-height;
     line-height: $footer-height; /* Vertically center the text there */

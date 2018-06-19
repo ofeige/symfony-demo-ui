@@ -1,5 +1,6 @@
 // webpack.config.js
-var Encore = require('@symfony/webpack-encore');
+let Encore            = require('@symfony/webpack-encore');
+let GoogleFontsPlugin = require("google-fonts-webpack-plugin");
 
 Encore
 // the project directory where all compiled assets will be stored
@@ -10,6 +11,13 @@ Encore
 
     // will create public/build/app.js and public/build/app.scss
     .addEntry('app', './assets/js/app.js')
+
+    .addPlugin(new GoogleFontsPlugin({
+        fonts: [
+            { family: "Open Sans", variants: ["400", "600"] }
+        ],
+        "path": "fonts/"
+    }))
 
     // allow legacy applications to use $/jQuery as a global variable
     .autoProvidejQuery()
