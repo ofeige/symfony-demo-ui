@@ -20,7 +20,7 @@ class Profile extends Controller
     {
         $user = $this->getUser();
         $userProfile = $user->getUserProfile();
-        if($userProfile == null) {
+        if($userProfile === null) {
             $userProfile = new UserProfile();
         }
         $form = $this->createForm(UserProfileType::class, $userProfile);
