@@ -24,7 +24,7 @@ class EasyAdmin extends BaseAdminController
     private function updatePassword($entity)
     {
         if (is_subclass_of($entity, UserInterface::class) && method_exists($entity, 'getPlainPassword')) {
-            if (($plainPassword = $entity->getPlainPassword()) == '') {
+            if ($entity->getPlainPassword() == '') {
                 return $entity;
             }
             $entity->setPassword($this->passwordEncoder->encodePassword($entity, $entity->getPlainPassword()));

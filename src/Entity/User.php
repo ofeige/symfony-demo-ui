@@ -62,17 +62,17 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(name="is_active", type="boolean")
      */
-    private $isActive;
+    private $active;
 
     /**
      * @ORM\Column(name="is_deleted", type="boolean")
      */
-    private $isDeleted;
+    private $deleted;
 
     public function __construct()
     {
-        $this->isActive = true;
-        $this->isDeleted = false;
+        $this->active = true;
+        $this->deleted = false;
     }
 
     public function getId(): ?int
@@ -127,22 +127,22 @@ class User implements UserInterface, \Serializable
 
     public function isActive(): bool
     {
-        return $this->isActive;
+        return $this->active;
     }
 
-    public function setIsActive(bool $isActive): void
+    public function setActive(bool $active): void
     {
-        $this->isActive = $isActive;
+        $this->active = $active;
     }
 
     public function isDeleted(): bool
     {
-        return $this->isDeleted;
+        return $this->deleted;
     }
 
-    public function setIsDeleted(bool $isDeleted): void
+    public function setDeleted(bool $deleted): void
     {
-        $this->isDeleted = $isDeleted;
+        $this->deleted = $deleted;
     }
 
     public function getRoles(): array
