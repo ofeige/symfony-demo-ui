@@ -7,6 +7,9 @@
         "php": "^7.2",
         "ext-iconv": "*",
         "easycorp/easyadmin-bundle": "^1.17",
+        "eightpoints/guzzle-bundle": "^7.3",
+        "guzzlehttp/guzzle": "^6.3",
+        "ofeige/symfony-demo-dto": "dev-master",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "^4.0",
         "symfony/console": "^4.0",
@@ -17,7 +20,9 @@
         "symfony/lts": "^4@dev",
         "symfony/orm-pack": "^1.0",
         "symfony/profiler-pack": "^1.0",
+        "symfony/property-access": "^4.0",
         "symfony/security-bundle": "^4.0",
+        "symfony/serializer-pack": "^1.0",
         "symfony/twig-bundle": "^4.0",
         "symfony/validator": "^4.0",
         "symfony/yaml": "^4.0"
@@ -51,7 +56,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
@@ -67,5 +73,11 @@
         "symfony": {
             "allow-contrib": false
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:bywulf/symfony-demo-dto.git"
+        }
+    ]
 }

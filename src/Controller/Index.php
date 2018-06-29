@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\ApiClient\ApiClient;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class Index extends Controller
@@ -30,5 +32,16 @@ class Index extends Controller
     public function comingSoon()
     {
         return $this->render('coming_soon.html.twig');
+    }
+
+    /**
+     * @Route("/users", name="users")
+     * @param ApiClient $client
+     * @return Response
+     */
+    public function users(ApiClient $client)
+    {
+        dump($client->getUsers());
+        return new Response("ok");
     }
 }
