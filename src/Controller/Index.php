@@ -35,13 +35,68 @@ class Index extends Controller
     }
 
     /**
-     * @Route("/users", name="users")
+     * @Route("/users/v1", name="users_v1")
      * @param ApiClient $client
      * @return Response
      */
-    public function users(ApiClient $client)
+    public function usersV1(ApiClient $client)
     {
-        dump($client->getUsers());
-        return new Response("ok");
+        dump($client->getUsersV1());
+        return new Response('ok');
+    }
+
+    /**
+     * @Route("/users/v2", name="users_v2")
+     * @param ApiClient $client
+     * @return Response
+     */
+    public function usersV2(ApiClient $client)
+    {
+        dump($client->getUsersV2());
+        return new Response('ok');
+    }
+
+    /**
+     * @Route("/users/v3", name="users_v3")
+     * @param ApiClient $client
+     * @return Response
+     */
+    public function usersV3(ApiClient $client)
+    {
+        dump($client->getUsersV3());
+        return new Response('ok');
+    }
+
+    /**
+     * @Route("/users/v4", name="users_v4")
+     * @param ApiClient $client
+     * @return Response
+     */
+    public function usersV4(ApiClient $client)
+    {
+        dump($client->getUsersV4());
+        return new Response('ok');
+    }
+
+    /**
+     * @Route("/users/v5", name="users_v5")
+     * @param ApiClient $client
+     * @return Response
+     */
+    public function usersV5(ApiClient $client)
+    {
+        dump($client->getUsersV5());
+        return new Response('ok');
+    }
+
+    /**
+     * @Route("/users/v6", name="users_v6")
+     * @param ApiClient $client
+     * @return Response
+     */
+    public function usersV6(ApiClient $client)
+    {
+        dump($client->getUsersV6());
+        return new Response('ok');
     }
 }
