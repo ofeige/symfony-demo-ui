@@ -73,6 +73,18 @@ class ApiClient
         return $this->serializerWithCollections->deserialize($content, $dtoClass . '[]', 'json');
     }
 
+    private function pathToDtoArrayWithPhpSerialize($uri): array
+    {
+        $data = $this->client->get($uri, [
+            'headers' => [
+                'Accept' => 'application/vnd.demo.dto'
+            ]
+        ]);
+        $content = $data->getBody()->getContents();
+
+        return unserialize($content);
+    }
+
     /**
      * @return UserV1[]
      */
@@ -110,7 +122,15 @@ class ApiClient
      */
     public function getItemsV1(): array
     {
-        return $this->pathToDtoArrayWithoutCollections('/api/v1/items?limit=0,10', ItemV1::class);
+        return $this->pathToDtoArrayWithoutCollections('/api/v1/items?limit=0,5', ItemV1::class);
+    }
+
+    /**
+     * @return UserV1[]
+     */
+    public function getItemsV1Php(): array
+    {
+        return $this->pathToDtoArrayWithPhpSerialize('/api/v1/items?limit=0,5');
     }
 
     /**

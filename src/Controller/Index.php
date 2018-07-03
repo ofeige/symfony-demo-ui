@@ -90,6 +90,17 @@ class Index extends Controller
     }
 
     /**
+     * @Route("/items/v1/php", name="items_v1_php")
+     * @param ApiClient $client
+     * @return Response
+     */
+    public function itemsV1Php(ApiClient $client)
+    {
+        dump($client->getItemsV1Php());
+        return new Response('ok');
+    }
+
+    /**
      * @Route("/items/v2", name="items_v2")
      * @param ApiClient $client
      * @return Response
