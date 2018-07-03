@@ -2,16 +2,17 @@
 
 namespace App\ApiClient;
 
+use Api\Dto\ItemV1;
+use Api\Dto\ItemV2;
 use Api\Dto\UserV1;
 use Api\Dto\UserV2;
 use Api\Dto\UserV3;
 use Api\Dto\UserV4;
-use Api\Dto\UserV5;
-use Api\Dto\UserV6;
 use GuzzleHttp\Client;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
@@ -40,12 +41,15 @@ class ApiClient
         $this->client = $client;
 
         $this->serializerWithoutCollections = new Serializer([
+            new DateTimeNormalizer(),
             new ObjectNormalizer(null, null, null, new ReflectionExtractor()),
             new ArrayDenormalizer()
         ], [
             new JsonEncoder()
         ]);
         $this->serializerWithCollections = new Serializer([
+            new DateTimeNormalizer(),
+            new ObjectNormalizer(),
             new GetSetMethodNormalizer(),
             new ArrayDenormalizer()
         ], [
@@ -102,18 +106,18 @@ class ApiClient
     }
 
     /**
-     * @return UserV5[]
+     * @return UserV1[]
      */
-    public function getUsersV5(): array
+    public function getItemsV1(): array
     {
-        return $this->pathToDtoArrayWithoutCollections('/api/v5/users', UserV5::class);
+        return $this->pathToDtoArrayWithoutCollections('/api/v1/items?limit=0,10', ItemV1::class);
     }
 
     /**
-     * @return UserV6[]
+     * @return UserV2[]
      */
-    public function getUsersV6(): array
+    public function getItemsV2(): array
     {
-        return $this->pathToDtoArrayWithCollections('/api/v6/users', UserV6::class);
+        return $this->pathToDtoArrayWithoutCollections('/api/v2/items?limit=0,10', ItemV2::class);
     }
 }

@@ -2,7 +2,7 @@ eight_points_guzzle:
     clients:
         my_client:
             # Write here the host where to do requests
-            base_url: "http://api.demo.test/"
+            base_url: "http://api.mech.test/"
 
             options:
                 auth: ["basic", "basic"]

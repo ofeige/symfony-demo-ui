@@ -79,24 +79,24 @@ class Index extends Controller
     }
 
     /**
-     * @Route("/users/v5", name="users_v5")
+     * @Route("/items/v1", name="items_v1")
      * @param ApiClient $client
      * @return Response
      */
-    public function usersV5(ApiClient $client)
+    public function itemsV1(ApiClient $client)
     {
-        dump($client->getUsersV5());
+        dump($client->getItemsV1());
         return new Response('ok');
     }
 
     /**
-     * @Route("/users/v6", name="users_v6")
+     * @Route("/items/v2", name="items_v2")
      * @param ApiClient $client
      * @return Response
      */
-    public function usersV6(ApiClient $client)
+    public function itemsV2(ApiClient $client)
     {
-        dump($client->getUsersV6());
+        dump($client->getItemsV2());
         return new Response('ok');
     }
 }

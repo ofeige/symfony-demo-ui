@@ -1429,12 +1429,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/byWulf/symfony-demo-dto.git",
-                "reference": "bdac9adedcb758e2290e6d8953d491a16e7df1d9"
+                "reference": "609ba87d3efc296666a3b458e890b905ee8ed243"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byWulf/symfony-demo-dto/zipball/bdac9adedcb758e2290e6d8953d491a16e7df1d9",
-                "reference": "bdac9adedcb758e2290e6d8953d491a16e7df1d9",
+                "url": "https://api.github.com/repos/byWulf/symfony-demo-dto/zipball/609ba87d3efc296666a3b458e890b905ee8ed243",
+                "reference": "609ba87d3efc296666a3b458e890b905ee8ed243",
                 "shasum": ""
             },
             "require": {
@@ -1453,7 +1453,7 @@
                 "source": "https://github.com/byWulf/symfony-demo-dto/tree/master",
                 "issues": "https://github.com/byWulf/symfony-demo-dto/issues"
             },
-            "time": "2018-07-02T10:38:23+00:00"
+            "time": "2018-07-02T14:54:33+00:00"
         },
         {
             "name": "pagerfanta/pagerfanta",
