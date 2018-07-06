@@ -8,7 +8,7 @@ easy_admin:
                     - username
                     - { property: 'email', type: 'email' }
                     - { property: 'roles', type: 'array', sortable: false }
-                    - isActive
+                    - active
             form:
                 fields:
                     - { type: 'group', label: 'Basic information', icon: 'shield',
@@ -16,7 +16,7 @@ easy_admin:
                     - username
                     - { property: 'email', type: 'email' }
 
-                    - isActive
+                    - active
 
                     - { type: 'group', label: 'Roles', icon: 'shield',
                                             help: 'Roles of the User', css_class: 'danger' }
