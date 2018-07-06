@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\UserProfile;
-use App\Form\UserProfileType;
+use App\Form\Type\UserProfileType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
