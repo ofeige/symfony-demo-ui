@@ -27,10 +27,6 @@ class ApiClient
      * @var Serializer
      */
     private $serializerWithoutCollections;
-    /**
-     * @var Serializer
-     */
-    private $serializerWithCollections;
 
     /**
      * ApiClient constructor.
@@ -47,14 +43,6 @@ class ApiClient
         ], [
             new JsonEncoder()
         ]);
-        $this->serializerWithCollections = new Serializer([
-            new DateTimeNormalizer(),
-            new ObjectNormalizer(),
-            new GetSetMethodNormalizer(),
-            new ArrayDenormalizer()
-        ], [
-            new JsonEncoder()
-        ]);
     }
 
     private function pathToDtoArrayWithoutCollections($uri, $dtoClass): array
@@ -63,14 +51,6 @@ class ApiClient
         $content = $data->getBody()->getContents();
 
         return $this->serializerWithoutCollections->deserialize($content, $dtoClass . '[]', 'json');
-    }
-
-    private function pathToDtoArrayWithCollections($uri, $dtoClass): array
-    {
-        $data = $this->client->get($uri);
-        $content = $data->getBody()->getContents();
-
-        return $this->serializerWithCollections->deserialize($content, $dtoClass . '[]', 'json');
     }
 
     private function pathToDtoArrayWithPhpSerialize($uri): array
@@ -110,19 +90,11 @@ class ApiClient
     }
 
     /**
-     * @return UserV4[]
-     */
-    public function getUsersV4(): array
-    {
-        return $this->pathToDtoArrayWithCollections('/api/v4/users', UserV4::class);
-    }
-
-    /**
      * @return UserV1[]
      */
     public function getItemsV1(): array
     {
-        return $this->pathToDtoArrayWithoutCollections('/api/v1/items?limit=0,5', ItemV1::class);
+        return $this->pathToDtoArrayWithoutCollections('/api/v1/items', ItemV1::class);
     }
 
     /**
@@ -130,14 +102,6 @@ class ApiClient
      */
     public function getItemsV1Php(): array
     {
-        return $this->pathToDtoArrayWithPhpSerialize('/api/v1/items?limit=0,5');
-    }
-
-    /**
-     * @return UserV2[]
-     */
-    public function getItemsV2(): array
-    {
-        return $this->pathToDtoArrayWithoutCollections('/api/v2/items?limit=0,10', ItemV2::class);
+        return $this->pathToDtoArrayWithPhpSerialize('/api/v1/items');
     }
 }
