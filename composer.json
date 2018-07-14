@@ -8,6 +8,7 @@
         "ext-iconv": "*",
         "easycorp/easyadmin-bundle": "^1.17",
         "eightpoints/guzzle-bundle": "^7.3",
+        "ekino/newrelic-bundle": "^2.0-beta",
         "guzzlehttp/guzzle": "^6.3",
         "ofeige/symfony-demo-dto": "dev-master",
         "sensio/framework-extra-bundle": "^5.1",
