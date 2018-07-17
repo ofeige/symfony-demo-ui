@@ -26,3 +26,15 @@ services:
 
     App\ApiClient\ApiClient:
         arguments: ['@eight_points_guzzle.client.my_client']
+
+    Redis:
+        class: Redis
+        calls:
+            - method: connect
+              arguments:
+                  - '%env(REDIS_URL)%'
+                  - '%env(REDIS_PORT)%'
+
+    Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler:
+        arguments:
+            - '@Redis'
