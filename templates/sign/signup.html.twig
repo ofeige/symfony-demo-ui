@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+    <!-- Login -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-lg-5">
+                <header class="text-center mb-4">
+                    <h2 class="h2">Signup</h2>
+                </header>
+
+                <!-- Form -->
+                {{ form_start(form, {'attr': {'class': 'shadow'}}) }}
+                <div class="border border-primary rounded-top border-bottom-0 p-4">
+                    <div class="mb-4">
+                        {{ form_row(form.username, {
+                            'label_attr': {'class':''},
+                            'attr': {'class':'','placeholder': 'johndoe'},
+                        }) }}
+                    </div>
+
+                    <div class="mb-4">
+                        {{ form_row(form.email, {
+                            'label_attr': {'class':''},
+                            'attr': {'class':'','placeholder': 'johndoe@gmail.com'},
+                        }) }}
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col">
+                            {{ form_row(form.plainPassword.first, {
+                                'label_attr': {'class':''},
+                                'attr': {'class':'','placeholder': 'Password'},
+                            }) }}
+                        </div>
+
+                        <div class="col">
+                            {{ form_row(form.plainPassword.second, {
+                                'label_attr': {'class':''},
+                                'attr': {'class':'','placeholder': 'Password'},
+                            }) }}
+                        </div>
+                    </div>
+
+                    <div>
+                        <small class="form-text text-muted">
+                            <label class="  text-black-50">
+                                <input type="checkbox" name="terms" checked>
+                                I accept the <a href="{{ path('terms') }}">Terms and Conditions</a>
+                            </label>
+                        </small>
+                    </div>
+                </div>
+                <div class="border border-primary rounded-bottom p-4 text-center">
+                    <button class="btn btn-md btn-block btn-primary" type="submit">Signup</button>
+                    <small class="form-text text-muted text-black-50 pt-4">Already have an account? <a
+                                href="{{ path('login') }}">sign-in</a>
+                    </small>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    <!-- End Login -->
+
+{% endblock %}

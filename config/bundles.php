@@ -13,5 +13,4 @@ return [
     EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle::class => ['all' => true],
     EightPoints\Bundle\GuzzleBundle\EightPointsGuzzleBundle::class => ['all' => true],
     Ekino\NewRelicBundle\EkinoNewRelicBundle::class => ['all' => true],
-    Bywulf\UserBundle\BywulfUserBundle::class => ['all' => true],
 ];
