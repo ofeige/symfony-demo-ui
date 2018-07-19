@@ -21,7 +21,7 @@ class UserProfile
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="Bywulf\UserBundle\Entity\User", inversedBy="userProfile")
+     * @ORM\OneToOne(targetEntity="Bywulf\UserBundle\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $user;

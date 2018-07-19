@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\UserProfile;
 use App\Form\Type\UserProfileType;
+use App\Repository\UserProfileRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -15,11 +16,15 @@ class Profile extends Controller
     /**
      * @Route("/user/profile", name="user_profile")
      * @Security("has_role('ROLE_USER')")
+     *
+     * @param Request $request
+     * @param UserProfileRepository $userProfileRepository
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, UserProfileRepository $userProfileRepository)
     {
         $user = $this->getUser();
-        $userProfile = $user->getUserProfile();
+        $userProfile = $userProfileRepository->findOneBy(['user' => $user]);
         if($userProfile === null) {
             $userProfile = new UserProfile();
         }
@@ -29,9 +34,7 @@ class Profile extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $userProfile->setUser($user);
-            $user->setUserProfile($userProfile);
             $em->persist($userProfile);
-            $em->persist($user);
             $em->flush();
         }
 
