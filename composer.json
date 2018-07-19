@@ -66,7 +66,16 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "setup-clean-db": [
+            "bin/console doctrine:database:drop --if-exists --force",
+            "bin/console doctrine:database:create",
+            "bin/console doctrine:migrations:migrate -n",
+            "bin/console doctrine:fixtures:load -n"
         ]
+    },
+    "scripts-descriptions": {
+        "setup-clean-db": "Warning! Drop Database and install it completely new including Fixtures"
     },
     "conflict": {
         "symfony/symfony": "*"

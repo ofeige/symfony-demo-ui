@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "1f75d280654702c4355a82b4d218dad3",
+
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2982,6 +2983,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/flex/zipball/7ede6446afac01e6e381db8c8c6fddb7c05a2aa7",
                 "reference": "7ede6446afac01e6e381db8c8c6fddb7c05a2aa7",
+
                 "shasum": ""
             },
             "require": {
