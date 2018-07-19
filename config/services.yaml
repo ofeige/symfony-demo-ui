@@ -29,6 +29,7 @@ services:
 
     Redis:
         class: Redis
+        lazy: true
         calls:
             - method: connect
               arguments:

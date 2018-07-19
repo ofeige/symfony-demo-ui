@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8d1a81e220bc327d8cfea03a5033fca",
+    "content-hash": "1f75d280654702c4355a82b4d218dad3",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1495,12 +1495,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/byWulf/symfony-demo-dto.git",
+                "url": "https://github.com/ofeige/symfony-demo-dto.git",
                 "reference": "609ba87d3efc296666a3b458e890b905ee8ed243"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byWulf/symfony-demo-dto/zipball/609ba87d3efc296666a3b458e890b905ee8ed243",
+                "url": "https://api.github.com/repos/ofeige/symfony-demo-dto/zipball/609ba87d3efc296666a3b458e890b905ee8ed243",
                 "reference": "609ba87d3efc296666a3b458e890b905ee8ed243",
                 "shasum": ""
             },
@@ -3815,6 +3815,60 @@
                 "validator"
             ],
             "time": "2018-05-16T14:33:22+00:00"
+        },
+        {
+            "name": "symfony/proxy-manager-bridge",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/proxy-manager-bridge.git",
+                "reference": "79443a9b3b9e3c9f65c9b11ec04ca8acd999bd9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/proxy-manager-bridge/zipball/79443a9b3b9e3c9f65c9b11ec04ca8acd999bd9f",
+                "reference": "79443a9b3b9e3c9f65c9b11ec04ca8acd999bd9f",
+                "shasum": ""
+            },
+            "require": {
+                "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
+                "php": "^7.1.3",
+                "symfony/dependency-injection": "~3.4|~4.0"
+            },
+            "require-dev": {
+                "symfony/config": "~3.4|~4.0"
+            },
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bridge\\ProxyManager\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony ProxyManager Bridge",
+            "homepage": "https://symfony.com",
+            "time": "2018-06-15T07:52:42+00:00"
         },
         {
             "name": "symfony/routing",
