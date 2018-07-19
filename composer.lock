@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/byWulf/user-bundle.git",
-                "reference": "c43a8cd2913b4b91976fd5280591aa25a19188fe"
+                "reference": "560f706eb4eb56005b8fbf0542e081a8cc5df61a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byWulf/user-bundle/zipball/c43a8cd2913b4b91976fd5280591aa25a19188fe",
-                "reference": "c43a8cd2913b4b91976fd5280591aa25a19188fe",
+                "url": "https://api.github.com/repos/byWulf/user-bundle/zipball/560f706eb4eb56005b8fbf0542e081a8cc5df61a",
+                "reference": "560f706eb4eb56005b8fbf0542e081a8cc5df61a",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "source": "https://github.com/byWulf/user-bundle/tree/master",
                 "issues": "https://github.com/byWulf/user-bundle/issues"
             },
-            "time": "2018-07-19T08:01:52+00:00"
+            "time": "2018-07-19T13:24:44+00:00"
         },
         {
             "name": "doctrine/annotations",

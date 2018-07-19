@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+        input {
+            /*border border-primary*/
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    <section>
+        <div class="container g-z-index-1 g-py-100">
+            <h1>Welcome, {{ username }}</h1>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary btn-lg btn-block" type="submit">save</button>
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}
