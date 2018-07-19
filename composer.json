@@ -6,6 +6,7 @@
     "require": {
         "php": "^7.2",
         "ext-iconv": "*",
+        "bywulf/user-bundle": "dev-master",
         "easycorp/easyadmin-bundle": "^1.17",
         "eightpoints/guzzle-bundle": "^7.3",
         "ekino/newrelic-bundle": "^2.0-beta",
@@ -88,6 +89,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:bywulf/symfony-demo-dto.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:bywulf/user-bundle.git"
         }
     ]
 }

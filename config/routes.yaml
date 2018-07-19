@@ -4,3 +4,6 @@
 
 logout:
     path: /logout
+
+bywulf_user:
+    resource: '@BywulfUserBundle/Resources/config/routes.yaml'
