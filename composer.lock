@@ -4,61 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "230244ee835b76e9442430023f4f31eb",
+    "content-hash": "9d307584e4309b95f574207affc9fb4e",
     "packages": [
-        {
-            "name": "bywulf/user-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/byWulf/user-bundle.git",
-                "reference": "c43a8cd2913b4b91976fd5280591aa25a19188fe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/byWulf/user-bundle/zipball/c43a8cd2913b4b91976fd5280591aa25a19188fe",
-                "reference": "c43a8cd2913b4b91976fd5280591aa25a19188fe",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/orm": "^2.6",
-                "php": "^7.1.3",
-                "sensio/framework-extra-bundle": "^5.2",
-                "symfony/config": "^4.1",
-                "symfony/dependency-injection": "^4.1",
-                "symfony/doctrine-bridge": "^4.1",
-                "symfony/form": "^4.1",
-                "symfony/framework-bundle": "^4.1",
-                "symfony/http-kernel": "^4.1",
-                "symfony/security-core": "^4.1",
-                "symfony/security-http": "^4.1",
-                "symfony/validator": "^4.1"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Bywulf\\UserBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "Tests/"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "Michael Wolf",
-                    "email": "wulf1337@gmail.com"
-                },
-                {
-                    "name": "Oliver Feige"
-                }
-            ],
-            "description": "This bundle provides a user environment.",
-            "support": {
-                "source": "https://github.com/byWulf/user-bundle/tree/master",
-                "issues": "https://github.com/byWulf/user-bundle/issues"
-            },
-            "time": "2018-07-19T08:01:52+00:00"
-        },
         {
             "name": "doctrine/annotations",
             "version": "v1.6.0",
@@ -5490,7 +5437,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "bywulf/user-bundle": 20,
         "ekino/newrelic-bundle": 10,
         "ofeige/symfony-demo-dto": 20,
         "symfony/lts": 20

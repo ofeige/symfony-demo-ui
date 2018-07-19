@@ -3,7 +3,7 @@ security:
     providers:
         our_db_provider:
             entity:
-                class: Bywulf\UserBundle\Entity\User
+                class: App\Entity\User
                 property: email
 
 
@@ -13,13 +13,13 @@ security:
             security: false
         main:
             pattern: ^/
-            user_checker: bywulf_user_security_user_checker
+            user_checker: App\Security\UserChecker
 
             anonymous: ~
 
             form_login:
-                login_path: bywulf_user_login
-                check_path: bywulf_user_login
+                login_path: login
+                check_path: login
 
             logout:
                 path:   /logout
@@ -36,7 +36,7 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
 
     encoders:
-        Bywulf\UserBundle\Entity\User:
+        App\Entity\User:
             algorithm: bcrypt
             cost: 14
 
