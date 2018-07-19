@@ -39,3 +39,4 @@ services:
     Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler:
         arguments:
             - '@Redis'
+
