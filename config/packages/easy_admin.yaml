@@ -1,7 +1,7 @@
 easy_admin:
     entities:
         User:
-            class: App\Entity\User
+            class: Bywulf\UserBundle\Entity\User
             list:
                 fields:
                     - id
