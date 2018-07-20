@@ -29,6 +29,7 @@ easy_admin:
             edit:
                 fields:
                     - { property: 'plainPassword', type: 'password', type_options: {required: false}}
+
         Item:
             class: App\Entity\Item
             list:
@@ -38,11 +39,11 @@ easy_admin:
                 fields:
                     - { property: 'name', type: "string", sortable: false }
                     - { property: 'sortOrder', type: 'integer', sortable: false }
+            templates:
+                list: 'admin/list/sortable.html.twig'
 
     site_name: 'Demo-42'
     design:
-        templates:
-            list: '@App\easy_admin\list.html.twig'
         menu:
             - { entity: 'User', icon: 'user' }
             - { entity: 'Item', icon: 'database' }
