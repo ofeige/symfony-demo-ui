@@ -30,8 +30,21 @@ easy_admin:
                 fields:
                     - { property: 'plainPassword', type: 'password', type_options: {required: false}}
 
+        Item:
+            class: App\Entity\Item
+            list:
+                sort: ['sortOrder', 'ASC']
+                title: "Important product categories"
+                max_results: 100
+                fields:
+                    - { property: 'name', type: "string", sortable: false }
+                    - { property: 'sortOrder', type: 'integer', sortable: false }
+            templates:
+                list: 'admin/list/sortable.html.twig'
+
     site_name: 'Demo-42'
     design:
         menu:
             - { entity: 'User', icon: 'user' }
+            - { entity: 'Item', icon: 'database' }
             - { label: 'exit admin', route: 'app', icon: 'close' }

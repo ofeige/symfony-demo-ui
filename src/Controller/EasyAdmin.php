@@ -38,4 +38,19 @@ class EasyAdmin extends BaseAdminController
         $this->updatePassword($entity);
         parent::updateEntity($entity);
     }
+
+    protected function rearangeAction() {
+        $ids = json_decode($this->request->get('ids'));
+        $order = 1;
+        $entity = $this->request->get('entity');
+        $sortField = $this->request->get('sortField');
+
+        foreach($ids as $id) {
+            $qb = $this->em->createQueryBuilder()->update('App:'.$entity, 'e')->set('e.'.$sortField, $order++)->where('e.id = :id');
+            $qb->setParameter('id', $id);
+            $qb->getQuery()->execute();
+        }
+
+        return $this->redirectToReferrer();
+    }
 }
