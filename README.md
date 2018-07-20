@@ -23,11 +23,9 @@ yarn install
 yarn run encore production 
 ``` 
 
-now we have to setup the database
+now we have to setup the database! simply run composer
 ``` 
-bin/console doctrine:database:create
-bin/console doctrine:migrations:migrate -n
-bin/console doctrine:fixtures:load -n
+composer setup-clean-db
 ``` 
 
 now you can call http://ui.demo.test 
