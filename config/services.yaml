@@ -32,3 +32,16 @@ services:
         factory: ['@doctrine.orm.default_entity_manager', getRepository]
         arguments:
             - App\Entity\UserProfile
+
+    Redis:
+        class: Redis
+        lazy: true
+        calls:
+            - method: connect
+              arguments:
+                  - '%env(REDIS_URL)%'
+                  - '%env(REDIS_PORT)%'
+
+    Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler:
+        arguments:
+            - '@Redis'
